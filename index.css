@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Creme Sicle Theme - Warm, Friendly, Premium */
+        --background: 30 50% 98%;
+        /* Warm Cream */
+        --foreground: 20 10% 15%;
+        /* Warm Charcoal */
+
+        --card: 0 0% 100%;
+        --card-foreground: 20 10% 15%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 10% 15%;
+
+        /* Creme Sicle Orange */
+        --primary: 25 95% 58%;
+        --primary-foreground: 0 0% 100%;
+
+        /* Soft Peach/Orange for secondary actions */
+        --secondary: 25 30% 95%;
+        --secondary-foreground: 25 95% 58%;
+
+        --muted: 30 20% 94%;
+        --muted-foreground: 20 5% 50%;
+
+        /* Blue for interactions/accents (Gradient hint via color choice) */
+        --accent: 210 100% 96%;
+        /* Very light blue for hover backgrounds */
+        --accent-foreground: 210 100% 50%;
+        /* Vibrant blue text */
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 30 10% 90%;
+        --input: 30 10% 90%;
+
+        /* Blue Ring for focus states - "Blue gradient interactions" feel */
+        --ring: 210 100% 70%;
+
+        --radius: 1rem;
+        /* Softer, friendlier radius */
+
+        /* Legacy Map */
+        --page: 30 50% 98%;
+        --text-primary: 20 10% 15%;
+        --text-secondary: 20 5% 50%;
+        --text-disabled: 20 5% 70%;
+
+        /* Refined Context Colors */
+        --success: 142 70% 40%;
+        --success-bg: 142 50% 96%;
+        --success-text: 142 70% 30%;
+
+        --warning: 35 90% 50%;
+        --warning-bg: 40 80% 96%;
+        --warning-text: 30 80% 30%;
+
+        --error: 0 80% 60%;
+        --error-bg: 0 80% 98%;
+        --error-text: 0 70% 40%;
+    }
+
+    .dark {
+        /* Dark Mode - Deep Orange/Brown tones with Blue accents */
+        --background: 20 15% 8%;
+        /* Very dark warm grey */
+        --foreground: 30 30% 96%;
+
+        --card: 20 15% 10%;
+        --card-foreground: 30 30% 96%;
+
+        --popover: 20 15% 10%;
+        --popover-foreground: 30 30% 96%;
+
+        --primary: 25 85% 60%;
+        /* Lighter orange for dark mode */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 25 20% 18%;
+        --secondary-foreground: 25 85% 60%;
+
+        --muted: 25 10% 15%;
+        --muted-foreground: 30 10% 60%;
+
+        --accent: 210 30% 18%;
+        /* Dark blue tint */
+        --accent-foreground: 210 90% 70%;
+        /* Light blue text */
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 25 10% 18%;
+        --input: 25 10% 18%;
+        --ring: 210 90% 60%;
+
+        /* Legacy dark mappings */
+        --page: 20 15% 8%;
+        --text-primary: 30 30% 96%;
+        --text-secondary: 30 10% 60%;
+        --text-disabled: 25 10% 25%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased selection:bg-primary/10 selection:text-primary;
+        background-image: radial-gradient(hsl(var(--muted)/0.5) 1px, transparent 1px);
+        background-size: 24px 24px;
+        background-color: hsl(var(--background));
+    }
+}
