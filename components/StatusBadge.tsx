@@ -22,7 +22,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, className }) =
         <Badge
             variant="secondary"
             className={cn(
-                "font-medium bg-secondary/50 text-secondary-foreground hover:bg-secondary/70 border-0",
+                "font-medium border-0",
                 // We will trust config.colorClass has suitable tailwind classes. 
                 // If it has 'bg-blue-100 text-blue-800', it will override secondary styles if specificity allows or via cn merging.
                 // Ideally we want subtle backgrounds.

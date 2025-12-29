@@ -7,6 +7,7 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     './index.html',
+    './*.{ts,tsx}',
   ],
   theme: {
     container: {
@@ -54,13 +55,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Legacy Custom Colors Mapped
-        page: "hsl(var(--page))",
-        text: {
-          primary: "hsl(var(--text-primary))",
-          secondary: "hsl(var(--text-secondary))",
-          disabled: "hsl(var(--text-disabled))",
-        },
         // Extending accent provided by shadcn
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -69,20 +63,14 @@ module.exports = {
           hover: "hsl(var(--accent-hover))",
           light: "hsl(var(--accent-light))",
         },
-        success: {
-          DEFAULT: "hsl(var(--success))",
-          bg: "hsl(var(--success-bg))",
-          text: "hsl(var(--success-text))",
-        },
-        warning: {
-          DEFAULT: "hsl(var(--warning))",
-          bg: "hsl(var(--warning-bg))",
-          text: "hsl(var(--warning-text))",
-        },
-        error: {
-          DEFAULT: "hsl(var(--error))",
-          bg: "hsl(var(--error-bg))",
-          text: "hsl(var(--error-text))",
+        status: {
+          neutral: "hsl(var(--status-neutral))",
+          info: "hsl(var(--status-info))",
+          warning: "hsl(var(--status-warning))",
+          engaged: "hsl(var(--status-engaged))",
+          success: "hsl(var(--status-success))",
+          completed: "hsl(var(--status-completed))",
+          error: "hsl(var(--status-error))",
         },
       },
       borderRadius: {
