@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/table"
 import { StatusBadge } from './StatusBadge';
 import { formatDate, isOverdue, isDueToday } from '../utils';
-import { ArrowUp, ArrowDown, Edit2, Trash2, MoreHorizontal, User, Plus } from 'lucide-react';
+import { ArrowUp, ArrowDown, Edit2, Trash2, MoreHorizontal, User, Plus, Linkedin } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+
 
 interface DataTableProps {
   contacts: Contact[];
@@ -149,6 +150,20 @@ const DataTable: React.FC<DataTableProps> = ({
                   </TableCell>
                   <TableCell className="text-right pr-6">
                     <div className="flex items-center justify-end space-x-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      {contact.linkedin_url && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(contact.linkedin_url, '_blank', 'noopener,noreferrer');
+                          }}
+                          className="h-8 w-8 text-blue-500 hover:text-blue-600 hover:bg-blue-50"
+                          title="View LinkedIn"
+                        >
+                          <Linkedin className="w-4 h-4" />
+                        </Button>
+                      )}
                       <Button
                         variant="ghost"
                         size="icon"
@@ -190,7 +205,20 @@ const DataTable: React.FC<DataTableProps> = ({
             >
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="text-base font-semibold text-foreground">{contact.name}</h3>
+                  <h3 className="text-base font-semibold text-foreground flex items-center gap-2">
+                    {contact.name}
+                    {contact.linkedin_url && (
+                      <a
+                        href={contact.linkedin_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-blue-500 hover:text-blue-600"
+                      >
+                        <Linkedin className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                  </h3>
                   <p className="text-sm text-muted-foreground">
                     {contact.title} <span className="text-border">@</span> {contact.company}
                   </p>
